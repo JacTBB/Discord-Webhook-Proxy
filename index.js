@@ -1,3 +1,4 @@
+fetch = require('node-fetch-npm')
 const express = require('express')
 const rateLimit = require('express-rate-limit')
 app = express()
@@ -32,14 +33,13 @@ app.post('/*', limiter, async (request, res) => {
     try {
         const path = request.path
         const finalURL = DiscordURL + path
-        console.log(request.body)
         fetch(finalURL, {
             method: 'POST',
             headers: {'content-type':'application/json'},
             body: JSON.stringify(request.body)
         })
         .then((response) => {
-            console.log(response)
+            console.log(response.status)
             res.status(response.status).end()
         })
         .catch((error) => {
@@ -47,7 +47,8 @@ app.post('/*', limiter, async (request, res) => {
             res.status(400).end()
         })
     }
-    catch {
+    catch (error) {
+        console.log(error)
         res.status(400).end()
     }
 })
