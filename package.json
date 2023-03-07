@@ -5,6 +5,7 @@
   "dependencies": {
     "express": "^4.18.2",
     "express-rate-limit": "^6.7.0",
+    "noblox.js": "^4.13.1",
     "node-fetch-npm": "^2.0.4"
   }
 }
