@@ -2,7 +2,7 @@ const express = require('express')
 const rateLimit = require('express-rate-limit')
 app = express()
 app.use(express.json())
-port = process.env.port || 8080
+port = process.env.PORT || 8080
 app.listen(port, () => {
     console.log(`Rest API listening on port ${port}`)
 })
