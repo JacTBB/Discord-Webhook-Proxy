@@ -18,6 +18,9 @@ const Whitelist = [
     ['User', 669150884], //Arioch
     ['Group', 9032731], //Seward
     ['Group', 5431795], //SCPF
+    
+    ['User', 638555031],
+    ['Group', 4872094],
 ]
 
 //Rate Limiters
