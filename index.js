@@ -24,7 +24,11 @@ limiter = rateLimit({
 })
 
 //HTTP
-app.use('/', limiter, async (request, res) => {
+app.get('/', async (req, res) => {
+    res.status(200).json({status: 'Online!'})
+})
+
+app.post('/', limiter, async (request, res) => {
     try {
         const path = request.path
         const finalURL = DiscordURL + path
